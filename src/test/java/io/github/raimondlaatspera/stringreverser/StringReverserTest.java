@@ -21,7 +21,7 @@ public class StringReverserTest {
     }
 
     @Test
-    void shouldReverseEmptyString(){
+    void shouldReverseEmptyString() {
         StringReverser stringReverser = new StringReverser();
 
         assertEquals("", stringReverser.reverseString(""));
@@ -49,9 +49,8 @@ public class StringReverserTest {
     }
 
     @Test
-    void shouldReturnNullWhenInputIsNull(){
+    void shouldReturnNullWhenInputIsNull() {
         StringReverser stringReverser = new StringReverser();
-        assertThrows(IllegalArgumentException.class,
-                () -> stringReverser.reverseString(null));
+        assertThrows(IllegalArgumentException.class, () -> stringReverser.reverseString(null));
     }
 }
