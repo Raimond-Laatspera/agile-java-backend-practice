@@ -29,9 +29,9 @@ public class StringReverserTest {
 
     @Test
     void shouldReverseSpecialCharacters() {
-        StringReverser stringReverse = new StringReverser();
+        StringReverser stringReverser = new StringReverser();
 
-        assertEquals("!@#$%^", stringReverse.reverseString("^%$#@!"));
+        assertEquals("!@#$%^", stringReverser.reverseString("^%$#@!"));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class StringReverserTest {
     }
 
     @Test
-    void shouldReturnNullWhenInputIsNull() {
+    void shouldThrowIllegalArgumentExceptionWhenInputIsNull() {
         StringReverser stringReverser = new StringReverser();
         assertThrows(IllegalArgumentException.class, () -> stringReverser.reverseString(null));
     }

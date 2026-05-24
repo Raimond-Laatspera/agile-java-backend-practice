@@ -2,7 +2,7 @@ package io.github.raimondlaatspera.palindromechecker;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PalindromeCheckerTest {
 
@@ -14,6 +14,13 @@ public class PalindromeCheckerTest {
     }
 
     @Test
+    void shouldReturnFalseForInvalidPalindrome() {
+        PalindromeChecker palindromeChecker = new PalindromeChecker();
+
+        assertFalse(palindromeChecker.isPalindrome("hello"));
+    }
+
+    @Test
     void shouldIgnoreCapitalization() {
         PalindromeChecker palindromeChecker = new PalindromeChecker();
 
@@ -21,9 +28,16 @@ public class PalindromeCheckerTest {
     }
 
     @Test
-    void shouldIgnoreWhitespace() {
+    void shouldIgnoreAllWhitespaceCharacters() {
         PalindromeChecker palindromeChecker = new PalindromeChecker();
 
         assertTrue(palindromeChecker.isPalindrome("     rats   live on no evil star   "));
+    }
+
+    @Test
+    void shouldThrowIllegalArgumentExceptionWhenInputIsNull() {
+        PalindromeChecker palindromeChecker = new PalindromeChecker();
+
+        assertThrows(IllegalArgumentException.class, () -> palindromeChecker.isPalindrome(null));
     }
 }
